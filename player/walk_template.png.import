@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/troll.png-78efc50bfccaa17f54d40cfea3eef5f5.stex"
+path="res://.import/walk_template.png-177fa2368d3afc7bf046a227068b3f52.stex"
 
 [deps]
 
-source_file="res://troll.png"
-dest_files=[ "res://.import/troll.png-78efc50bfccaa17f54d40cfea3eef5f5.stex" ]
+source_file="res://player/walk_template.png"
+dest_files=[ "res://.import/walk_template.png-177fa2368d3afc7bf046a227068b3f52.stex" ]
 
 [params]
 

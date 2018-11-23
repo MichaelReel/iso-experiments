@@ -1,24 +1,17 @@
 extends KinematicBody2D
 
-# This is a demo showing how KinematicBody2D
-# move_and_slide works.
-
 # Member variables
-const MOTION_SPEED = 100 # Pixels/second
+const MOTION_SPEED = 0 # Pixels/second
 
-var sprite_dir = "down_mid"
-
-func _physics_process(delta):
-	var motion = get_input_motion()
-	sprite_dir = get_sprite_anim_dir(motion)
-	var animation_name = str("idle_", sprite_dir)
-	if motion != Vector2(0,0):
-		animation_name = str("walk_", sprite_dir)
+func set_animation(animation, sprite_dir):
+	var animation_name = str(animation, "_", sprite_dir)
 	if $anim.current_animation != animation_name:
 		$anim.play(animation_name)
 	
+func perform_movement(motion):
 	var norm_motion = motion.normalized() * MOTION_SPEED
-	norm_motion.y *= 0.5 # Perform movement isometrically
+	# Adjust movement for isometric
+	norm_motion.y *= 0.5
 	move_and_slide(norm_motion)
 
 func get_input_motion():
@@ -37,7 +30,7 @@ func get_input_motion():
 		motion += Vector2(1, 0)
 	return motion
 
-func get_sprite_anim_dir(motion):
+func get_sprite_anim_dir(motion, default):
 	"""
 	Takes un-normalised motion vector
 	Returns animation string in format <vert>_<hortz>
@@ -63,4 +56,4 @@ func get_sprite_anim_dir(motion):
 			return "down_right"
 
 	# Otherwise, use the current direction
-	return sprite_dir
+	return default

@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://troll.gd" type="Script" id=1]
-[ext_resource path="res://walk_template.png" type="Texture" id=2]
+[ext_resource path="res://player/player.gd" type="Script" id=1]
+[ext_resource path="res://player/walk_template.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 
@@ -212,7 +212,7 @@ tracks/0/keys = {
 "values": [ 16, 17, 18, 19, 20, 21, 22, 23 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=12]
 
 resource_name = "walk_mid_left"
 length = 0.8
@@ -231,7 +231,7 @@ tracks/0/keys = {
 "values": [ 24, 25, 26, 27, 28, 29, 30, 31, 24 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=13]
 
 resource_name = "walk_mid_right"
 length = 0.8
@@ -250,7 +250,7 @@ tracks/0/keys = {
 "values": [ 32, 33, 34, 35, 36, 37, 38, 39, 32 ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=14]
 
 resource_name = "walk_up_left"
 length = 0.8
@@ -269,7 +269,7 @@ tracks/0/keys = {
 "values": [ 40, 41, 42, 43, 44, 45, 46, 47 ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=15]
 
 resource_name = "walk_up_mid"
 length = 0.8
@@ -288,7 +288,7 @@ tracks/0/keys = {
 "values": [ 48, 49, 50, 51, 52, 53, 54, 55 ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=16]
 
 resource_name = "walk_up_right"
 length = 0.8
@@ -307,12 +307,12 @@ tracks/0/keys = {
 "values": [ 56, 57, 58, 59, 60, 61, 62, 63 ]
 }
 
-[sub_resource type="CircleShape2D" id=12]
+[sub_resource type="CircleShape2D" id=17]
 
 custom_solver_bias = 0.0
 radius = 16.0
 
-[node name="troll" type="KinematicBody2D"]
+[node name="troll" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -338,11 +338,11 @@ anims/idle_up_right = SubResource( 8 )
 anims/walk_down_left = SubResource( 9 )
 anims/walk_down_mid = SubResource( 10 )
 anims/walk_down_right = SubResource( 11 )
-anims/walk_mid_left = SubResource( 13 )
-anims/walk_mid_right = SubResource( 14 )
-anims/walk_up_left = SubResource( 15 )
-anims/walk_up_mid = SubResource( 16 )
-anims/walk_up_right = SubResource( 17 )
+anims/walk_mid_left = SubResource( 12 )
+anims/walk_mid_right = SubResource( 13 )
+anims/walk_up_left = SubResource( 14 )
+anims/walk_up_mid = SubResource( 15 )
+anims/walk_up_right = SubResource( 16 )
 blend_times = [  ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
@@ -357,7 +357,7 @@ _sections_unfolded = [ "Animation", "Region" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( -0.342697, -0.980721 )
-shape = SubResource( 12 )
+shape = SubResource( 17 )
 
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
 
