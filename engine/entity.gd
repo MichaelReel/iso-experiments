@@ -6,7 +6,6 @@ var sprite_dir = "down_mid"
 
 func set_animation(animation, sprite_dir):
 	var animation_name = str(animation, "_", sprite_dir)
-	print (str("setting animation: ", animation_name))
 	if $anim.current_animation != animation_name:
 		$anim.play(animation_name)
 	
@@ -19,10 +18,27 @@ func perform_movement(motion):
 func update_sprite_anim_dir(motion):
 	"""
 	Takes un-normalised motion vector
-	Udpates sprite_dir animation string in format <vert>_<hortz>
+	Returns animation string in format <vert>_<hortz>
 	where <vert> is up, mid or down and <hortz> is left, mid or right
-	defaults to the already current one on mid_mid (no motion)
 	"""
-	if motion != dir.MID_MID:
-		sprite_dir = dir.DIR[motion]
+
+	match motion:
+		Vector2(-1, -1):
+			sprite_dir = "up_left"
+		Vector2( 0, -1):
+			sprite_dir = "up_mid"
+		Vector2( 1, -1):
+			sprite_dir = "up_right"
+		Vector2(-1,  0):
+			sprite_dir = "mid_left"
+		Vector2( 1,  0):
+			sprite_dir = "mid_right"
+		Vector2(-1,  1):
+			sprite_dir = "down_left"
+		Vector2( 0,  1):
+			sprite_dir = "down_mid"
+		Vector2( 1,  1):
+			sprite_dir = "down_right"
+
+	# Otherwise, use the current direction
 	return sprite_dir
