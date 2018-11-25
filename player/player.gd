@@ -1,12 +1,14 @@
-extends "res://entity/entity.gd"
+extends "res://engine/entity.gd"
 
 # Member variables
 const MOTION_SPEED = 100 # Pixels/second
+const FACTION = "PLAYER"
 
 func _physics_process(delta):
 	var motion = get_input_motion()
 	update_animation(motion)
 	perform_movement(motion)
+	update_damage(delta)
 
 func get_input_motion():
 	"""

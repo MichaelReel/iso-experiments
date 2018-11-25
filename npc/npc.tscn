@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://npc/walk_template.png" type="Texture" id=2]
@@ -310,7 +310,12 @@ tracks/0/keys = {
 [sub_resource type="CircleShape2D" id=17]
 
 custom_solver_bias = 0.0
-radius = 16.0
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id=18]
+
+custom_solver_bias = 0.0
+radius = 20.0
 
 [node name="NPC" type="KinematicBody2D" index="0"]
 
@@ -356,7 +361,24 @@ _sections_unfolded = [ "Animation", "Region" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-position = Vector2( -0.342697, -0.980721 )
+scale = Vector2( 1, 0.5 )
 shape = SubResource( 17 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="hitbox" type="Area2D" parent="." index="3"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" index="0"]
+
+scale = Vector2( 1, 0.5 )
+shape = SubResource( 18 )
+_sections_unfolded = [ "Transform" ]
 
 
