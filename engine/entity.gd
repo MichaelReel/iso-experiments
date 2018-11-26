@@ -56,3 +56,11 @@ func update_damage(delta):
 			health -= other_damage
 			hitstun = 0.25
 			knock_motion = self.transform.origin - body.transform.origin
+
+func use_item(item):
+	var new_item = item.instance()
+	var group_name = str(new_item.get_name(), self)
+	new_item.add_to_group(group_name)
+	add_child(new_item)
+	if get_tree().get_nodes_in_group(group_name).size() > new_item.max_amount:
+		new_item.queue_free()

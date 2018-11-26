@@ -354,11 +354,12 @@ blend_times = [  ]
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
 position = Vector2( -0.368389, -40.1017 )
+z_index = 1
 texture = ExtResource( 2 )
 vframes = 8
 hframes = 8
 frame = 36
-_sections_unfolded = [ "Animation", "Region" ]
+_sections_unfolded = [ "Animation", "Region", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 

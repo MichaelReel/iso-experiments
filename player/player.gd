@@ -32,3 +32,7 @@ func update_animation(motion):
 		set_animation("walk", sprite_dir)
 	else:
 		set_animation("idle", sprite_dir)
+
+	# TODO: Refactor this?:
+	if Input.is_action_just_pressed("action_a"):
+		use_item(preload("res://items/sword.tscn"))
