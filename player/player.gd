@@ -3,10 +3,24 @@ extends "res://engine/entity.gd"
 # Member variables
 const MOTION_SPEED = 100 # Pixels/second
 const FACTION = "PLAYER"
+var state = "default"
 
 func _physics_process(delta):
+	match state:
+		"default":
+			state_default(delta)
+		"swing":
+			state_swing(delta)
+
+func state_default(delta):
 	var motion = get_input_motion()
 	update_animation(motion)
+	perform_movement(motion)
+	update_damage(delta)
+
+func state_swing(delta):
+	var motion = dir.MID_MID
+	set_animation("idle")
 	perform_movement(motion)
 	update_damage(delta)
 
@@ -27,11 +41,11 @@ func get_input_motion():
 	return motion
 
 func update_animation(motion):
-	var sprite_dir = update_sprite_anim_dir(motion)
+	update_sprite_anim_dir(motion)
 	if motion != dir.MID_MID:
-		set_animation("walk", sprite_dir)
+		set_animation("walk")
 	else:
-		set_animation("idle", sprite_dir)
+		set_animation("idle")
 
 	# TODO: Refactor this?:
 	if Input.is_action_just_pressed("action_a"):

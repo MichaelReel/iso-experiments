@@ -29,9 +29,9 @@ func update_motion(delta):
 		move_time = rand_range(0.2, 3.0);
 
 func update_animation(motion):
-	var sprite_dir = update_sprite_anim_dir(motion)
+	update_sprite_anim_dir(motion)
 	if motion != dir.MID_MID:
-		set_animation("walk", sprite_dir)
+		set_animation("walk")
 	else:
-		set_animation("idle", sprite_dir)
+		set_animation("idle")
 	

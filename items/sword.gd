@@ -6,9 +6,15 @@ const DAMAGE = 1
 var max_amount = 1
 
 func _ready():
-	FACTION = get_parent().FACTION
+	var parent = get_parent()
+	FACTION = parent.FACTION
 	$anim.connect("animation_finished", self, "destroy")
-	$anim.play(str("swing_", get_parent().sprite_dir))
+	$anim.play(str("swing_", parent.sprite_dir))
+	if parent.has_method("state_swing"):
+		parent.state = "swing"
 
 func destroy(animation):
+	var parent = get_parent()
+	if parent.has_method("state_swing"):
+		parent.state = "default"
 	queue_free()

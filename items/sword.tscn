@@ -391,7 +391,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, 60, 0, 58, -12, 43, -24, 30, -27, 15, -30, 0, -31 )
 
-[node name="sword" type="Node2D"]
+[node name="sword" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -414,13 +414,11 @@ blend_times = [  ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
+position = Vector2( 0, -40 )
 texture = ExtResource( 2 )
 vframes = 8
 frame = 5
 _sections_unfolded = [ "Animation", "Transform", "Z Index" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="area" type="Area2D" parent="." index="2"]
 
@@ -489,6 +487,7 @@ __meta__ = {
 [node name="collision_up_left" type="CollisionShape2D" parent="area" index="5"]
 
 shape = SubResource( 10 )
+disabled = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true,
