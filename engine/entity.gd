@@ -38,19 +38,13 @@ func update_sprite_anim_dir(motion):
 	"""
 	if motion != dir.MID_MID:
 		sprite_dir = dir.DIR[motion]
-	return sprite_dir
 
 func update_damage(delta):
 	if hitstun > 0.0:
 		hitstun -= delta
+
 	for area in $hitbox.get_overlapping_areas():
 		var body = area.get_parent()
-		# # Forget about colliding with ourselves
-		# if body == self:
-		# 	continue
-		# # Only collide with other bodies (not tiles)
-		# if not body.is_class("KinematicBody2D"):
-		# 	continue
 		var other_damage = body.get("DAMAGE")
 		var other_faction = body.get("FACTION")
 		if hitstun <= 0.0 and other_damage != null and other_faction != self.FACTION:

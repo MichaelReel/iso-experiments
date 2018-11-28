@@ -42,7 +42,9 @@ func get_input_motion():
 
 func update_animation(motion):
 	update_sprite_anim_dir(motion)
-	if motion != dir.MID_MID:
+	if hitstun > 0.0:
+		set_animation("hurt")
+	elif motion != dir.MID_MID:
 		set_animation("walk")
 	else:
 		set_animation("idle")
