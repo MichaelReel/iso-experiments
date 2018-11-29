@@ -1,18 +1,17 @@
 extends KinematicBody2D
 
-# Member variables
+const MAX_HEALTH = 2.0
+const FACTION = "ENEMY"
 const MOTION_SPEED = 0 # Pixels/second
 const KNOCK_SPEED = 250
-const FACTION = "ENEMY"
+
 const DAMAGE = 0.0
 
+var knock_motion = dir.MID_MID
 var sprite_dir = "down_mid"
 
-var knock_motion = dir.MID_MID
+var health = MAX_HEALTH
 var hitstun = 0
-
-var health = 1.0
-
 
 func set_animation(animation):
 	var animation_name = str(animation, "_", sprite_dir)
@@ -42,6 +41,12 @@ func update_sprite_anim_dir(motion):
 func update_damage(delta):
 	if hitstun > 0.0:
 		hitstun -= delta
+	elif FACTION  == "ENEMY" && health <= 0:
+		var death_animation = preload("res://toxic/toxic_death.tscn").instance()
+		death_animation.init(sprite_dir)
+		get_parent().add_child(death_animation)
+		death_animation.global_transform = global_transform
+		queue_free()
 
 	for area in $hitbox.get_overlapping_areas():
 		var body = area.get_parent()
