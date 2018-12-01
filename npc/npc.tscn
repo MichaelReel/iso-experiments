@@ -1,6 +1,6 @@
 [gd_scene load_steps=36 format=2]
 
-[ext_resource path="res://player/player.gd" type="Script" id=1]
+[ext_resource path="res://npc/npc.gd" type="Script" id=1]
 [ext_resource path="res://npc/various_template.png" type="Texture" id=2]
 [ext_resource path="res://npc/walk_template.png" type="Texture" id=3]
 
