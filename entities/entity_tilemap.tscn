@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://tiles/entity_tiles.tres" type="TileSet" id=1]
-[ext_resource path="res://tiles/entity_tilemap.gd" type="Script" id=2]
+[ext_resource path="res://entities/entity_tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://entities/entity_tilemap.gd" type="Script" id=2]
 
-[node name="entities" type="TileMap"]
+[node name="entities" type="TileMap" index="0"]
 
 mode = 1
 tile_set = ExtResource( 1 )

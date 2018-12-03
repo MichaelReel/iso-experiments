@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/isotiles.png-0496cb644a2c9f4ed7c7493fbb0e603c.stex"
+path="res://.import/isotiles.png-13752252da086bfb0dea3d29fbff31ca.stex"
 
 [deps]
 
-source_file="res://dungeon/isotiles.png"
-dest_files=[ "res://.import/isotiles.png-0496cb644a2c9f4ed7c7493fbb0e603c.stex" ]
+source_file="res://tiles/isotiles.png"
+dest_files=[ "res://.import/isotiles.png-13752252da086bfb0dea3d29fbff31ca.stex" ]
 
 [params]
 

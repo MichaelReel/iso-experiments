@@ -3,7 +3,9 @@ extends "res://engine/entity.gd"
 # Member variables
 const MOTION_SPEED = 100 # Pixels/second
 const FACTION = "PLAYER"
+
 var state = "default"
+var keys = 0
 
 func _physics_process(delta):
 	match state:
@@ -11,6 +13,9 @@ func _physics_process(delta):
 			state_default(delta)
 		"swing":
 			state_swing(delta)
+
+	# Not sure why we'd waste time doing this:
+	keys = min(keys, 9)
 
 func state_default(delta):
 	var motion = get_input_motion()
