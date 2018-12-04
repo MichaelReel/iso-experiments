@@ -3,7 +3,7 @@
 [ext_resource path="res://tiles/key_door.gd" type="Script" id=1]
 [ext_resource path="res://tiles/isotiles.png" type="Texture" id=2]
 
-[node name="key_door" type="StaticBody2D" index="0"]
+[node name="key_door" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -14,70 +14,51 @@ friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
-[node name="open" type="Node2D" parent="." index="0"]
-
-visible = false
-position = Vector2( 23, 23 )
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite2" type="Sprite" parent="open" index="0"]
+[node name="open_01" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 6
 frame = 14
-region_rect = Rect2( 424, 420, 120, 120 )
-_sections_unfolded = [ "Animation", "Region", "Transform" ]
+region_enabled = true
+region_rect = Rect2( 387, 421, 140, 92 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Sprite" type="Sprite" parent="open" index="1"]
+[node name="open_02" type="Sprite" parent="." index="1"]
 
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 6
 frame = 15
-region_rect = Rect2( 616, 420, 120, 120 )
-_sections_unfolded = [ "Animation", "Region", "Transform" ]
+region_enabled = true
+region_rect = Rect2( 619, 402, 60, 130 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="closed" type="Node2D" parent="." index="1"]
-
-position = Vector2( 27, 13 )
-_sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="closed" index="0"]
+[node name="closed" type="Sprite" parent="." index="2"]
 
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 40, 420, 120, 120 )
+region_rect = Rect2( 3, 397, 140, 140 )
 region_filter_clip = true
-_sections_unfolded = [ "Region", "Transform" ]
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="barrier" type="CollisionPolygon2D" parent="." index="2"]
+[node name="barrier" type="CollisionPolygon2D" parent="." index="3"]
 
-position = Vector2( 0, 32 )
 build_mode = 0
-polygon = PoolVector2Array( 48, -8, 64, 0, 0, 32, -16, 24 )
+polygon = PoolVector2Array( 48, 24, 64, 32, 0, 64, -16, 56 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="area" type="Area2D" parent="." index="3"]
+[node name="area" type="Area2D" parent="." index="4"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -89,9 +70,8 @@ audio_bus_name = "Master"
 
 [node name="unlock_pad" type="CollisionPolygon2D" parent="area" index="0"]
 
-position = Vector2( 0, 32 )
 build_mode = 0
-polygon = PoolVector2Array( 36, -6, 60, 6, 16, 28, -8, 16 )
+polygon = PoolVector2Array( 36, 26, 60, 38, 16, 60, -8, 48 )
 _sections_unfolded = [ "Transform" ]
 
 

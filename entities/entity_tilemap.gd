@@ -8,5 +8,10 @@ func _ready():
 		print (str("Attempting to load:", tscn))
 		var node = load(tscn).instance()
 		node.global_position = map_to_world(tile)
+		
+		# Hack to fix odd map overlapping
+		node.global_position.y += 1
+		
 		get_parent().call_deferred("add_child", node)
+		print (str("Adding child node ", node, ", at pos ", node.global_position))
 	queue_free()

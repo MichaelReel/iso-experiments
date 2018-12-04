@@ -1005,7 +1005,7 @@ position = Vector2( 0, -40 )
 texture = ExtResource( 2 )
 vframes = 8
 hframes = 8
-frame = 47
+frame = 40
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]

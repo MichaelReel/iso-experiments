@@ -13,14 +13,16 @@ func body_entered(body):
 func open():
 	# Change sprite
 	$closed.visible = false
-	$open.visible = true
-	# Remove obsticle
+	$open_01.visible = true
+	$open_02.visible = true
+	# Remove obstacle
 	$barrier.disabled = true
 
 func close():
 	# Change sprite
 	$closed.visible = true
-	$open.visible = false
-	# Add obsticle
+	$open_01.visible = false
+	$open_02.visible = false
+	# Add obstacle
 	$barrier.disabled = false
 	
