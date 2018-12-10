@@ -950,7 +950,7 @@ tracks/1/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -1054,5 +1054,6 @@ _sections_unfolded = [ "Transform" ]
 
 build_mode = 0
 polygon = PoolVector2Array( 0, -10, 14, -7, 20, 0, 14, 7, 0, 10, -14, 7, -20, 0, -14, -7 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 

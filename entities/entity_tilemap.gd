@@ -9,6 +9,10 @@ func _ready():
 		var node = load(tscn).instance()
 		node.global_position = map_to_world(tile)
 		
+		# Check for X flipped tiles
+		if is_cell_x_flipped(tile.x, tile.y) and node.has_method("flip_x"):
+			node.flip_x()
+		
 		# Hack to fix odd map overlapping
 		node.global_position.y += 1
 		
