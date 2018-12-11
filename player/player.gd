@@ -3,6 +3,7 @@ extends "res://engine/entity.gd"
 # Member variables
 const MOTION_SPEED = 100 # Pixels/second
 const FACTION = "PLAYER"
+const MAX_HEALTH = 16.0
 
 var state = "default"
 var keys = 0

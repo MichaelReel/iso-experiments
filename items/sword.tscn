@@ -3,7 +3,7 @@
 [ext_resource path="res://items/sword.gd" type="Script" id=1]
 [ext_resource path="res://items/sword_swing_template.png" type="Texture" id=2]
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=1]
 
 resource_name = "swing_down_left"
 length = 0.1
@@ -46,9 +46,8 @@ tracks/2/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 
-resource_name = "swing_down_mid"
 length = 0.1
 loop = false
 step = 0.1
@@ -89,7 +88,7 @@ tracks/2/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=3]
 
 resource_name = "swing_down_right"
 length = 0.1
@@ -132,9 +131,8 @@ tracks/2/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 
-resource_name = "swing_mid_left"
 length = 0.1
 loop = false
 step = 0.1
@@ -175,9 +173,8 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=5]
 
-resource_name = "swing_mid_right"
 length = 0.1
 loop = false
 step = 0.1
@@ -218,7 +215,7 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=6]
 
 resource_name = "swing_up_left"
 length = 0.1
@@ -261,9 +258,8 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=7]
 
-resource_name = "swing_up_mid"
 length = 0.1
 loop = false
 step = 0.1
@@ -304,7 +300,7 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=8]
 
 resource_name = "swing_up_right"
 length = 0.1
@@ -347,51 +343,51 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="ConvexPolygonShape2D" id=5]
+[sub_resource type="ConvexPolygonShape2D" id=9]
 
 custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, -56, 0, -54, 10, -43, 22, -30, 27, -15, 30, 0, 30 )
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
+[sub_resource type="ConvexPolygonShape2D" id=10]
 
 custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, -38, 23, -28, 28, -14, 31, 14, 31, 30, 28, 38, 23 )
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="ConvexPolygonShape2D" id=7]
+[sub_resource type="ConvexPolygonShape2D" id=11]
 
 custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, 60, 0, 58, 10, 44, 22, 30, 27, 15, 30, 0, 30 )
 
-[sub_resource type="ConvexPolygonShape2D" id=8]
+[sub_resource type="ConvexPolygonShape2D" id=12]
 
 custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, -38, 23, -52, 15, -60, 4, -60, -5, -53, -15, -38, -23 )
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="ConvexPolygonShape2D" id=9]
+[sub_resource type="ConvexPolygonShape2D" id=13]
 
 custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, 38, 23, 52, 15, 60, 4, 60, -5, 53, -15, 38, -23 )
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="ConvexPolygonShape2D" id=10]
+[sub_resource type="ConvexPolygonShape2D" id=14]
 
 custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, -60, 0, -58, -12, -43, -24, -30, -27, -15, -30, 0, -31 )
 
-[sub_resource type="ConvexPolygonShape2D" id=12]
+[sub_resource type="ConvexPolygonShape2D" id=15]
 
 custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, -38, -23, -28, -28, -14, -31, 14, -31, 30, -28, 38, -23 )
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="ConvexPolygonShape2D" id=11]
+[sub_resource type="ConvexPolygonShape2D" id=16]
 
 custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, 60, 0, 58, -12, 43, -24, 30, -27, 15, -30, 0, -31 )
 
-[node name="sword" type="Node2D"]
+[node name="sword" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -402,14 +398,14 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/swing_down_left = SubResource( 13 )
-anims/swing_down_mid = SubResource( 1 )
-anims/swing_down_right = SubResource( 14 )
-anims/swing_mid_left = SubResource( 2 )
-anims/swing_mid_right = SubResource( 3 )
-anims/swing_up_left = SubResource( 15 )
-anims/swing_up_mid = SubResource( 4 )
-anims/swing_up_right = SubResource( 16 )
+anims/swing_down_left = SubResource( 1 )
+anims/swing_down_mid = SubResource( 2 )
+anims/swing_down_right = SubResource( 3 )
+anims/swing_mid_left = SubResource( 4 )
+anims/swing_mid_right = SubResource( 5 )
+anims/swing_up_left = SubResource( 6 )
+anims/swing_up_mid = SubResource( 7 )
+anims/swing_up_right = SubResource( 8 )
 blend_times = [  ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
@@ -436,7 +432,7 @@ __meta__ = {
 
 [node name="collision_down_left" type="CollisionShape2D" parent="area" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 9 )
 disabled = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
@@ -446,7 +442,7 @@ __meta__ = {
 
 [node name="collsion_down_mid" type="CollisionShape2D" parent="area" index="1"]
 
-shape = SubResource( 6 )
+shape = SubResource( 10 )
 disabled = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
@@ -456,7 +452,7 @@ __meta__ = {
 
 [node name="collision_down_right" type="CollisionShape2D" parent="area" index="2"]
 
-shape = SubResource( 7 )
+shape = SubResource( 11 )
 disabled = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
@@ -466,7 +462,7 @@ __meta__ = {
 
 [node name="collsion_mid_left" type="CollisionShape2D" parent="area" index="3"]
 
-shape = SubResource( 8 )
+shape = SubResource( 12 )
 disabled = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
@@ -476,7 +472,7 @@ __meta__ = {
 
 [node name="collsion_mid_right" type="CollisionShape2D" parent="area" index="4"]
 
-shape = SubResource( 9 )
+shape = SubResource( 13 )
 disabled = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
@@ -486,7 +482,7 @@ __meta__ = {
 
 [node name="collision_up_left" type="CollisionShape2D" parent="area" index="5"]
 
-shape = SubResource( 10 )
+shape = SubResource( 14 )
 disabled = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
@@ -496,7 +492,7 @@ __meta__ = {
 
 [node name="collsion_up_mid" type="CollisionShape2D" parent="area" index="6"]
 
-shape = SubResource( 12 )
+shape = SubResource( 15 )
 disabled = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
@@ -506,7 +502,7 @@ __meta__ = {
 
 [node name="collision_up_right" type="CollisionShape2D" parent="area" index="7"]
 
-shape = SubResource( 11 )
+shape = SubResource( 16 )
 disabled = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {

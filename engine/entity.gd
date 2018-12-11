@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const MAX_HEALTH = 2.0
+const MAX_HEALTH = 1.0
 const FACTION = "ENEMY"
 const MOTION_SPEED = 0 # Pixels/second
 const KNOCK_SPEED = 250

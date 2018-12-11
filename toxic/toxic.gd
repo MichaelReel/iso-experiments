@@ -2,7 +2,7 @@ extends "res://engine/entity.gd"
 
 # Member variables
 const MOTION_SPEED = 100 # Pixels/second
-const DAMAGE = 0.1
+const DAMAGE = 0.75
 
 var move_time = 0.0
 var motion
