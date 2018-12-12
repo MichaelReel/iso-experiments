@@ -39,13 +39,14 @@ func update_sprite_anim_dir(motion):
 		sprite_dir = dir.DIR[motion]
 
 func update_damage(delta):
+	health = min(MAX_HEALTH, health)
 	if hitstun > 0.0:
 		hitstun -= delta
 	elif FACTION  == "ENEMY" && health <= 0:
-		var death_animation = preload("res://toxic/toxic_death.tscn").instance()
-		death_animation.init(sprite_dir)
-		get_parent().add_child(death_animation)
-		death_animation.global_transform = global_transform
+		var drop = randi() % 3
+		if drop == 0:
+			instance_scene(preload("res://pickups/heart.tscn"))
+		instance_scene(preload("res://toxic/toxic_death.tscn"))
 		queue_free()
 
 	for area in $hitbox.get_overlapping_areas():
@@ -64,3 +65,10 @@ func use_item(item):
 	add_child(new_item)
 	if get_tree().get_nodes_in_group(group_name).size() > new_item.max_amount:
 		new_item.queue_free()
+
+func instance_scene(scene):
+	var new_scene = scene.instance()
+	new_scene.global_position = global_position
+	if new_scene.has_method("set_dir"):
+		new_scene.set_dir(sprite_dir)
+	get_parent().add_child(new_scene)

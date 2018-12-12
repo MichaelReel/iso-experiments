@@ -2,7 +2,7 @@ extends Node2D
 
 var sprite_dir = "down_left"
 
-func init(dir):
+func set_dir(dir):
 	sprite_dir = dir
 
 func _ready():

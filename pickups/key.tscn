@@ -3,7 +3,7 @@
 [ext_resource path="res://pickups/key.gd" type="Script" id=1]
 [ext_resource path="res://pickups/key.png" type="Texture" id=2]
 
-[node name="key" type="Area2D" index="0"]
+[node name="key" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -15,6 +15,7 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 disappears = false
+time_out = 0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
