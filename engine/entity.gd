@@ -1,11 +1,10 @@
 extends KinematicBody2D
 
-const MAX_HEALTH = 1.0
-const FACTION = "ENEMY"
-const MOTION_SPEED = 0 # Pixels/second
-const KNOCK_SPEED = 250
-
-const DAMAGE = 0.0
+export(float)  var MAX_HEALTH = 1.0
+export(String) var FACTION = "ENEMY"
+export(float)  var MOTION_SPEED = 0 # Pixels/second
+export(float)  var KNOCK_SPEED = 250
+export(float)  var DAMAGE = 0.0
 
 var knock_motion = dir.MID_MID
 var sprite_dir = "down_mid"

@@ -35,7 +35,6 @@ __meta__ = {
 
 [node name="player" parent="walls" instance=ExtResource( 3 )]
 position = Vector2( 940, 190 )
-_sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
 
 [node name="entities" parent="walls" instance=ExtResource( 4 )]
 z_index = 1

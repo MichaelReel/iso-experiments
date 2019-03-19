@@ -1,8 +1,9 @@
 extends "res://engine/entity.gd"
 
 # Member variables
-const MOTION_SPEED = 75 # Pixels/second
-const DAMAGE = 0.75
+func _init():
+	MOTION_SPEED = 75 # Pixels/second
+	DAMAGE = 0.75
 
 var move_time = 0.0
 var motion

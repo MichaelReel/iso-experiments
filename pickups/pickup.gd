@@ -18,7 +18,7 @@ func area_entered(area):
 	""" Call body entered on parent, so weapons can activate collision """
 	var area_parent = area.get_parent()
 	if area_parent.name == "sword":
-		body_entered(area_parent.get_parent())
+		emit_signal("body_entered", area_parent.get_parent())
 
 func on_timeout():
 	# TODO: Fade animation?
