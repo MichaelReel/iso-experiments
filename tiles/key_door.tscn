@@ -3,76 +3,45 @@
 [ext_resource path="res://tiles/key_door.gd" type="Script" id=1]
 [ext_resource path="res://tiles/isotiles.png" type="Texture" id=2]
 
-[node name="key_door" type="StaticBody2D" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+[node name="key_door" type="StaticBody2D"]
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="open_01" type="Sprite" parent="." index="0"]
-
+[node name="open_01" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 6
 frame = 14
 region_enabled = true
 region_rect = Rect2( 387, 421, 140, 92 )
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="open_02" type="Sprite" parent="." index="1"]
-
+[node name="open_02" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 6
 frame = 15
 region_enabled = true
 region_rect = Rect2( 619, 402, 60, 130 )
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="closed" type="Sprite" parent="." index="2"]
-
+[node name="closed" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 3, 397, 140, 140 )
 region_filter_clip = true
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="barrier" type="CollisionPolygon2D" parent="." index="3"]
-
-build_mode = 0
+[node name="barrier" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 48, 24, 64, 32, 0, 64, -16, 56 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="area" type="Area2D" parent="." index="4"]
+[node name="area" type="Area2D" parent="."]
 
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform", "Z Index" ]
-
-[node name="unlock_pad" type="CollisionPolygon2D" parent="area" index="0"]
-
-build_mode = 0
+[node name="unlock_pad" type="CollisionPolygon2D" parent="area"]
 polygon = PoolVector2Array( 36, 26, 60, 38, 16, 60, -8, 48 )
-_sections_unfolded = [ "Transform" ]
-
 

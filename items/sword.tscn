@@ -4,11 +4,8 @@
 [ext_resource path="res://items/sword_swing_template.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
-
 resource_name = "swing_down_left"
 length = 0.1
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -47,10 +44,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=2]
-
 length = 0.1
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -89,11 +83,8 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=3]
-
 resource_name = "swing_down_right"
 length = 0.1
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -132,10 +123,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=4]
-
 length = 0.1
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -174,10 +162,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=5]
-
 length = 0.1
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -216,11 +201,8 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=6]
-
 resource_name = "swing_up_left"
 length = 0.1
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -259,10 +241,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=7]
-
 length = 0.1
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -301,11 +280,8 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=8]
-
 resource_name = "swing_up_right"
 length = 0.1
-loop = false
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -344,60 +320,33 @@ tracks/2/keys = {
 }
 
 [sub_resource type="ConvexPolygonShape2D" id=9]
-
-custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, -56, 0, -54, 10, -43, 22, -30, 27, -15, 30, 0, 30 )
 
 [sub_resource type="ConvexPolygonShape2D" id=10]
-
-custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, -38, 23, -28, 28, -14, 31, 14, 31, 30, 28, 38, 23 )
-_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="ConvexPolygonShape2D" id=11]
-
-custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, 60, 0, 58, 10, 44, 22, 30, 27, 15, 30, 0, 30 )
 
 [sub_resource type="ConvexPolygonShape2D" id=12]
-
-custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, -38, 23, -52, 15, -60, 4, -60, -5, -53, -15, -38, -23 )
-_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="ConvexPolygonShape2D" id=13]
-
-custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, 38, 23, 52, 15, 60, 4, 60, -5, 53, -15, 38, -23 )
-_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="ConvexPolygonShape2D" id=14]
-
-custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, -60, 0, -58, -12, -43, -24, -30, -27, -15, -30, 0, -31 )
 
 [sub_resource type="ConvexPolygonShape2D" id=15]
-
-custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, -38, -23, -28, -28, -14, -31, 14, -31, 30, -28, 38, -23 )
-_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="ConvexPolygonShape2D" id=16]
-
-custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, 60, 0, 58, -12, 43, -24, 30, -27, 15, -30, 0, -31 )
 
-[node name="sword" type="Node2D" index="0"]
-
+[node name="sword" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="anim" type="AnimationPlayer" parent="." index="0"]
-
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
+[node name="anim" type="AnimationPlayer" parent="."]
 anims/swing_down_left = SubResource( 1 )
 anims/swing_down_mid = SubResource( 2 )
 anims/swing_down_right = SubResource( 3 )
@@ -406,108 +355,79 @@ anims/swing_mid_right = SubResource( 5 )
 anims/swing_up_left = SubResource( 6 )
 anims/swing_up_mid = SubResource( 7 )
 anims/swing_up_right = SubResource( 8 )
-blend_times = [  ]
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
-
+[node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -40 )
 texture = ExtResource( 2 )
 vframes = 8
 frame = 5
-_sections_unfolded = [ "Animation", "Transform", "Z Index" ]
 
-[node name="area" type="Area2D" parent="." index="2"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform" ]
+[node name="area" type="Area2D" parent="."]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="collision_down_left" type="CollisionShape2D" parent="area" index="0"]
-
+[node name="collision_down_left" type="CollisionShape2D" parent="area"]
 shape = SubResource( 9 )
 disabled = true
-_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
-[node name="collsion_down_mid" type="CollisionShape2D" parent="area" index="1"]
-
+[node name="collsion_down_mid" type="CollisionShape2D" parent="area"]
 shape = SubResource( 10 )
 disabled = true
-_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
-[node name="collision_down_right" type="CollisionShape2D" parent="area" index="2"]
-
+[node name="collision_down_right" type="CollisionShape2D" parent="area"]
 shape = SubResource( 11 )
 disabled = true
-_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
-[node name="collsion_mid_left" type="CollisionShape2D" parent="area" index="3"]
-
+[node name="collsion_mid_left" type="CollisionShape2D" parent="area"]
 shape = SubResource( 12 )
 disabled = true
-_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
-[node name="collsion_mid_right" type="CollisionShape2D" parent="area" index="4"]
-
+[node name="collsion_mid_right" type="CollisionShape2D" parent="area"]
 shape = SubResource( 13 )
 disabled = true
-_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
-[node name="collision_up_left" type="CollisionShape2D" parent="area" index="5"]
-
+[node name="collision_up_left" type="CollisionShape2D" parent="area"]
 shape = SubResource( 14 )
 disabled = true
-_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
-[node name="collsion_up_mid" type="CollisionShape2D" parent="area" index="6"]
-
+[node name="collsion_up_mid" type="CollisionShape2D" parent="area"]
 shape = SubResource( 15 )
 disabled = true
-_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
-[node name="collision_up_right" type="CollisionShape2D" parent="area" index="7"]
-
+[node name="collision_up_right" type="CollisionShape2D" parent="area"]
 shape = SubResource( 16 )
 disabled = true
-_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
-
 

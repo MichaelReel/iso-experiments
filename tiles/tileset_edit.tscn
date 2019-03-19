@@ -3,192 +3,107 @@
 [ext_resource path="res://tiles/isotiles.png" type="Texture" id=1]
 
 [sub_resource type="CapsuleShape2D" id=1]
-
-custom_solver_bias = 0.0
 radius = 11.2498
 height = 27.192
 
 [node name="Node2D" type="Node2D"]
 
-[node name="base" type="Sprite" parent="." index="0"]
-
+[node name="base" type="Sprite" parent="."]
 position = Vector2( 150.049, 61.1264 )
 texture = ExtResource( 1 )
 centered = false
 offset = Vector2( -66, -42 )
 region_enabled = true
 region_rect = Rect2( 28, 92, 132, 84 )
-_sections_unfolded = [ "Offset", "Region" ]
 
-[node name="base2" type="Sprite" parent="." index="1"]
-
+[node name="base2" type="Sprite" parent="."]
 position = Vector2( 257.013, 124.779 )
 texture = ExtResource( 1 )
 centered = false
 offset = Vector2( -66, -42 )
 region_enabled = true
 region_rect = Rect2( 220, 92, 132, 84 )
-_sections_unfolded = [ "Offset", "Region" ]
 
-[node name="wall" type="Sprite" parent="." index="2"]
-
+[node name="wall" type="Sprite" parent="."]
 position = Vector2( 440.55, 161.025 )
 texture = ExtResource( 1 )
 centered = false
 offset = Vector2( -69.3109, -99.8051 )
 region_enabled = true
 region_rect = Rect2( 28, 220, 132, 136 )
-_sections_unfolded = [ "Offset", "Region" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="wall" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="wall"]
 
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Transform" ]
-
-[node name="collision" type="CollisionPolygon2D" parent="wall/StaticBody2D" index="0"]
-
-build_mode = 0
+[node name="collision" type="CollisionPolygon2D" parent="wall/StaticBody2D"]
 polygon = PoolVector2Array( -68, 2, -4, 34, 60, 2, -4, -30 )
 
-[node name="wall_corner_01" type="Sprite" parent="." index="3"]
-
+[node name="wall_corner_01" type="Sprite" parent="."]
 position = Vector2( 402.229, 535.974 )
 texture = ExtResource( 1 )
 centered = false
 offset = Vector2( -69.3109, -99.8051 )
 region_enabled = true
 region_rect = Rect2( 415, 220, 132, 136 )
-_sections_unfolded = [ "Offset", "Region" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="wall_corner_01" index="0"]
-
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_corner_01"]
 position = Vector2( -0.598724, 6.10352e-05 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Transform" ]
 
-[node name="collision" type="CollisionPolygon2D" parent="wall_corner_01/StaticBody2D" index="0"]
-
+[node name="collision" type="CollisionPolygon2D" parent="wall_corner_01/StaticBody2D"]
 position = Vector2( -0.323547, 1.52588e-05 )
-build_mode = 0
 polygon = PoolVector2Array( -68, 2, -4, 34, 60, 2 )
 
-[node name="wall_corner_02" type="Sprite" parent="." index="4"]
-
+[node name="wall_corner_02" type="Sprite" parent="."]
 position = Vector2( 401.141, 457.643 )
 texture = ExtResource( 1 )
 centered = false
 offset = Vector2( -69.3109, -99.8051 )
 region_enabled = true
 region_rect = Rect2( 799, 220, 132, 136 )
-_sections_unfolded = [ "Offset", "Region" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="wall_corner_02" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_corner_02"]
 
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Transform" ]
-
-[node name="collision" type="CollisionPolygon2D" parent="wall_corner_02/StaticBody2D" index="0"]
-
+[node name="collision" type="CollisionPolygon2D" parent="wall_corner_02/StaticBody2D"]
 position = Vector2( -0.323547, 1.52588e-05 )
-build_mode = 0
 polygon = PoolVector2Array( -68, 2, -4, -30, 60, 2 )
 
-[node name="wall_corner_03" type="Sprite" parent="." index="5"]
-
+[node name="wall_corner_03" type="Sprite" parent="."]
 position = Vector2( 327.057, 496.166 )
 texture = ExtResource( 1 )
 centered = false
 offset = Vector2( -69.3109, -99.8051 )
 region_enabled = true
 region_rect = Rect2( 607, 220, 132, 136 )
-_sections_unfolded = [ "Offset", "Region" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="wall_corner_03" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_corner_03"]
 
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Transform" ]
-
-[node name="collision" type="CollisionPolygon2D" parent="wall_corner_03/StaticBody2D" index="0"]
-
-build_mode = 0
+[node name="collision" type="CollisionPolygon2D" parent="wall_corner_03/StaticBody2D"]
 polygon = PoolVector2Array( -68, 2, -4, 34, -4, -30 )
 
-[node name="wall_corner_04" type="Sprite" parent="." index="6"]
-
+[node name="wall_corner_04" type="Sprite" parent="."]
 position = Vector2( 479.243, 497.582 )
 texture = ExtResource( 1 )
 centered = false
 offset = Vector2( -69.3109, -99.8051 )
 region_enabled = true
 region_rect = Rect2( 992, 220, 132, 136 )
-_sections_unfolded = [ "Offset", "Region" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="wall_corner_04" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_corner_04"]
 
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Transform" ]
-
-[node name="collision" type="CollisionPolygon2D" parent="wall_corner_04/StaticBody2D" index="0"]
-
-build_mode = 0
+[node name="collision" type="CollisionPolygon2D" parent="wall_corner_04/StaticBody2D"]
 polygon = PoolVector2Array( -4, 34, 60, 2, -4, -30 )
 
-[node name="column" type="Sprite" parent="." index="7"]
-
+[node name="column" type="Sprite" parent="."]
 position = Vector2( 327.658, 278.993 )
 texture = ExtResource( 1 )
 centered = false
 offset = Vector2( -69.5632, -100.446 )
 region_enabled = true
 region_rect = Rect2( 220, 220, 132, 136 )
-_sections_unfolded = [ "Offset", "Region" ]
 
-[node name="StaticBody" type="StaticBody2D" parent="column" index="0"]
+[node name="StaticBody" type="StaticBody2D" parent="column"]
 
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Transform" ]
-
-[node name="collision" type="CollisionShape2D" parent="column/StaticBody" index="0"]
-
+[node name="collision" type="CollisionShape2D" parent="column/StaticBody"]
 position = Vector2( 0, -4.5 )
 rotation = 1.5708
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
 
