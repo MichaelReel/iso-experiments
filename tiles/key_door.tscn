@@ -12,7 +12,7 @@ vframes = 3
 hframes = 6
 frame = 14
 region_enabled = true
-region_rect = Rect2( 387, 421, 140, 92 )
+region_rect = Rect2( 123, 205, 802, 314 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -23,7 +23,7 @@ vframes = 3
 hframes = 6
 frame = 15
 region_enabled = true
-region_rect = Rect2( 619, 402, 60, 130 )
+region_rect = Rect2( 525, 147, 213, 384 )
 __meta__ = {
 "_edit_lock_": true
 }
