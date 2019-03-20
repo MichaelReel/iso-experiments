@@ -15,15 +15,19 @@ func open():
 	$open_01.visible = true
 	$open_02.visible = true
 	# Remove obstacle
-	$barrier.disabled = true
-	$area/unlock_pad.disabled = true
+#   # Would prefer the door could be locked again, but disable isn't working
+#	$barrier.disabled = true
+#	$area/unlock_pad.disabled = true
+
+	$barrier.free()
+	$area/unlock_pad.free()
 
 func close():
 	# Change sprite
 	$closed.visible = true
 	$open_01.visible = false
 	$open_02.visible = false
-	# Add obstacle
+	# Add obstacle - This will fail if door previously closed
 	$barrier.disabled = false
 	$area/unlock_pad.disabled = false
 
