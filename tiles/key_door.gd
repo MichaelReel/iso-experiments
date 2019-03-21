@@ -7,7 +7,8 @@ func _ready():
 func body_entered(body):
 	if body.name == "player" && body.get("keys") > 0 && $closed.visible == true:
 		body.keys -= 1
-		open()
+		# This is a signal, so defer calls or setting of values may fail
+		self.call_deferred("open")
 
 func open():
 	# Change sprite
@@ -15,19 +16,15 @@ func open():
 	$open_01.visible = true
 	$open_02.visible = true
 	# Remove obstacle
-#   # Would prefer the door could be locked again, but disable isn't working
-#	$barrier.disabled = true
-#	$area/unlock_pad.disabled = true
-
-	$barrier.free()
-	$area/unlock_pad.free()
+	$barrier.disabled = true
+	$area/unlock_pad.disabled = true
 
 func close():
 	# Change sprite
 	$closed.visible = true
 	$open_01.visible = false
 	$open_02.visible = false
-	# Add obstacle - This will fail if door previously closed
+	# Add obstacle
 	$barrier.disabled = false
 	$area/unlock_pad.disabled = false
 
